@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Roland Swingler}]
-  s.date = %q{2011-11-16}
+  s.date = %q{2013-08-20}
   s.description = %q{Provide date helpers for UK working days}
   s.email = %q{roland.swingler@gmail.com}
   s.extra_rdoc_files = [
@@ -18,18 +18,19 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    "Gemfile",
     "LICENSE",
     "README.rdoc",
     "Rakefile",
     "VERSION",
     "lib/uk_working_days.rb",
     "lib/uk_working_days/date_extensions.rb",
-    "lib/uk_working_days/easter.rb",
     "test/helper.rb",
-    "test/test_easter.rb",
-    "test/test_uk_working_days.rb"
+    "test/test_de_working_days.rb",
+    "test/test_uk_working_days.rb",
+    "uk_working_days.gemspec"
   ]
-  s.homepage = %q{http://github.com/knaveofdiamonds/uk_working_days}
+  s.homepage = %q{http://github.com/notonthehighstreet/working_days}
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.6}
   s.summary = %q{Provide date helpers for UK working days}
@@ -38,15 +39,30 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<notonthehighstreet-holidays>, [">= 0"])
+      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
+      s.add_runtime_dependency(%q<uk_working_days>, [">= 0"])
       s.add_runtime_dependency(%q<activesupport>, [">= 3"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<rake>, [">= 0"])
+      s.add_development_dependency(%q<pry>, [">= 0"])
     else
+      s.add_dependency(%q<notonthehighstreet-holidays>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<uk_working_days>, [">= 0"])
       s.add_dependency(%q<activesupport>, [">= 3"])
       s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<rake>, [">= 0"])
+      s.add_dependency(%q<pry>, [">= 0"])
     end
   else
+    s.add_dependency(%q<notonthehighstreet-holidays>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<uk_working_days>, [">= 0"])
     s.add_dependency(%q<activesupport>, [">= 3"])
     s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<rake>, [">= 0"])
+    s.add_dependency(%q<pry>, [">= 0"])
   end
 end
 
